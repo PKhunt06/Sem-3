@@ -1,4 +1,4 @@
-// P-2-B  Demonstrate the concept of Call by value and Call by Reference.
+// P-2-B Demonstrate the concept of Call by value and Call by Reference.
 
 #include <stdio.h>
 
