@@ -1,4 +1,4 @@
-// P-2-A  Write a program to prints array elements in reverse orders using pointers.
+// P-2-A Write a program to prints array elements in reverse orders using pointers.
 
 #include <stdio.h>
 
