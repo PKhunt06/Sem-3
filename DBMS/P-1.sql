@@ -1,3 +1,66 @@
+-- P-1 Creation of Database Objects and Integrity Constraints (DDL). Create database which
+consist of following table and insertappropriate data into it.
+i. Table: regions
+● region_id: int(11), Primary Key, NOT NULL, AUTO_INCREMENT.
+● regionname: varchar(50), DEFAULT NULL.
+ii. Table: countries
+● country_id: char(2), Primary Key, NOT NULL.
+● countryname: varchar(40), NOT NULL.
+● region_id: int(11), Foreign Key (References regions.region_id).
+iii. Table: locations
+● location_id: int(11), Primary Key, NOT NULL, AUTO_INCREMENT.
+● address: varchar(255), NOT NULL.
+● postalcode: varchar(20), DEFAULT NULL.
+● city: varchar(50), DEFAULT NULL.
+● state: varchar(50), DEFAULT NULL.
+● country_id: char(2), Foreign Key (References countries.country_id).
+iv. Table: warehouses
+● warehouse_id: int(11), Primary Key, NOT NULL, AUTO_INCREMENT.
+● warehousename: varchar(255), DEFAULT NULL.
+● location_id: int(11), Foreign Key (References locations.location_id).
+    v. Table: employees
+● employee_id: int(11), Primary Key, NOT NULL, AUTO_INCREMENT.
+● firstname: varchar(255), NOT NULL.
+● lastname: varchar(255), NOT NULL.
+● email: varchar(255), NOT NULL.
+● phone: varchar(50), NOT NULL.
+● hiredate: date, NOT NULL.
+● manager_id: int(11), DEFAULT NULL (Self-referencing Foreign Key).
+● jobtitle: varchar(255), NOT NULL.
+vi. Table: product_categories
+● category_id: int(11), Primary Key, NOT NULL, AUTO_INCREMENT.
+● categoryname: varchar(255), NOT NULL.
+vii. Table: products
+● product_id: int(11), Primary Key, NOT NULL, AUTO_INCREMENT.
+● productname: varchar(255), NOT NULL.
+● description: varchar(2000), DEFAULT NULL.
+● standardcost: int(11), DEFAULT NULL.
+● listprice: int(11), DEFAULT NULL.
+● category_id: int(11), NOT NULL, Foreign Key (References
+product_categories.category_id).
+viii. Table: customers
+● customer_id: int(11), Primary Key, NOT NULL, AUTO_INCREMENT.
+● name: varchar(255), NOT NULL.
+● address: varchar(255), DEFAULT NULL.
+● website: varchar(255), DEFAULT NULL.
+● creditlimit: int(11), DEFAULT NULL.
+ix. Table: orders
+● order_id: int(11), Primary Key, NOT NULL, AUTO_INCREMENT.
+● status: varchar(20), NOT NULL.
+● customer_id: int(11), DEFAULT NULL (Foreign Key referencing customers).
+● salesman_id: int(11), DEFAULT NULL (Foreign Key referencing employees).
+● order_date: date, NOT NULL.
+x. Table: order_items
+● order_id: int(11), Composite Primary Key, NOT NULL.
+● item_id: int(11), Composite Primary Key, NOT NULL.
+● product_id: int(11), NOT NULL (Foreign Key referencing products).
+● quantity: int(11), NOT NULL.
+● unit_price: int(11), NOT NULL.
+xi. Table: inventories
+● product_id: int(11), Composite Primary Key, NOT NULL.
+● warehouse_id: int(11), Composite Primary Key, NOT NULL.
+-- quantity: int(11), NOT NULL.
+
 -- =========================================================
 -- 1. REGIONS
 -- =========================================================
